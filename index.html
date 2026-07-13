@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chelsie Gray | The 7-Day Strength Protocol</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0A192F;
+            --gold: #C5A059;
+            --cream: #F8F7F4;
+            --text: #333;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background-color: var(--cream);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: #e5e5e5;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .coach-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            color: var(--gold);
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(30px, 4.5vw, 48px);
+            line-height: 1.15;
+            color: var(--navy);
+            margin: 0 0 22px;
+        }
+
+        .subtext {
+            font-size: clamp(15px, 2vw, 18px);
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .feature-list p {
+            margin: 10px 0;
+            font-size: 15.5px;
+        }
+
+        .trust-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 35px;
+            opacity: 0.6;
+            align-items: center;
+        }
+
+        .trust-logos span {
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: var(--navy);
+            font-size: 15px;
+        }
+
+        .visual-col {
+            width: 100%;
+        }
+
+        .image-container {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            max-height: 480px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .optin-card {
+            background: var(--navy);
+            color: white;
+            padding: 36px 32px;
+            border-radius: 6px;
+            margin-top: -50px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            margin-top: 0;
+            color: var(--gold);
+            border-bottom: 1px solid #1c365c;
+            padding-bottom: 15px;
+            margin-bottom: 22px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 15px;
+            margin: 8px 0;
+            background: #162a47;
+            border: 1px solid #2A3D5A;
+            color: white;
+            border-radius: 3px;
+            font-size: 15px;
+        }
+
+        input::placeholder { color: #9aa8bd; }
+
+        button {
+            width: 100%;
+            padding: 17px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            margin-top: 12px;
+            line-height: 1.4;
+            border-radius: 3px;
+        }
+
+        button:hover { background: #a8874a; }
+
+        .footer-note {
+            font-size: 11px;
+            color: #888;
+            text-align: center;
+            margin-top: 18px;
+        }
+
+        /* Tablet */
+        @media (max-width: 900px) {
+            .layout {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 45px 20px 60px;
+            }
+            .text-col { text-align: center; }
+            .feature-list { text-align: left; max-width: 480px; margin: 0 auto 10px; }
+            .trust-logos { justify-content: center; }
+            .visual-col { max-width: 480px; margin: 0 auto; }
+            .image-container { max-height: 420px; margin: 30px auto 0; }
+            .optin-card { margin-top: -50px; }
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            .layout { padding: 35px 16px 50px; }
+            .optin-card {
+                margin-top: -35px;
+                padding: 28px 20px;
+            }
+            .image-container { max-height: 340px; }
+            .badge { font-size: 10px; padding: 5px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="layout">
+    <section class="text-col">
+        <div class="badge">COACHING BY CHELSIE GRAY</div>
+        <div class="coach-name">STRENGTH & PERFORMANCE</div>
+        <h1>The 7-Day Strength & Confidence Blueprint</h1>
+        <p class="subtext">Stop guessing. Start building. A sophisticated, science-backed foundation for women who want to own their strength without the burnout.</p>
+
+        <div class="feature-list">
+            <p><strong>✓ Precision patterns for lasting results.</strong></p>
+            <p><strong>✓ The mindset architecture of high-performers.</strong></p>
+            <p><strong>✓ Strategic nutrition for sustainable energy.</strong></p>
+        </div>
+
+        <div class="trust-logos">
+            <span>FORBES</span> <span>VOGUE</span> <span>FITNESS</span>
+        </div>
+    </section>
+
+    <section class="visual-col">
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?fm=jpg&q=90&w=900&auto=format&fit=crop" alt="Chelsie Gray - Strength Coach">
+        </div>
+        <div class="optin-card">
+            <h3>Grab the exact blueprint free</h3>
+           <form action="02-tripwire.html" method="GET">
+                <input type="text" placeholder="First Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <button type="submit">Enter the email & receive the exact blueprint in your inbox</button>
+            </form>
+            <p class="footer-note">Your privacy is 100% protected. Join 12K+ women.</p>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
