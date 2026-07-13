@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching Application | Chelsie Gray</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root { --green: #1A3C34; --green-dark: #122a24; --gold: #C5A059; --gold-light: #E4CDA0; --cream: #F8F7F2; --text: #1A1A1A; --muted: #6b6b6b; }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text);
+            padding: 70px 20px; margin: 0; position: relative; overflow-x: hidden;
+        }
+
+        /* Decorative background blobs */
+        body::before, body::after {
+            content: ''; position: absolute; border-radius: 50%; filter: blur(90px); z-index: 0; pointer-events: none;
+        }
+        body::before { width: 380px; height: 380px; background: var(--gold); opacity: .16; top: -140px; right: -100px; }
+        body::after { width: 320px; height: 320px; background: var(--green); opacity: .10; bottom: -100px; left: -100px; }
+
+        .container { max-width: 550px; margin: 0 auto; position: relative; z-index: 1; }
+
+        .header { text-align: center; margin-bottom: 36px; }
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: 7px; font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--gold);
+            background: #fff; padding: 8px 16px; border-radius: 999px; margin-bottom: 20px;
+            box-shadow: 0 8px 18px -8px rgba(26,60,52,0.25);
+        }
+        .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+        .header h1 { font-family: 'Playfair Display', serif; color: var(--green); margin-bottom: 14px; font-size: clamp(30px, 5vw, 38px); line-height: 1.15; }
+        .header p { color: var(--muted); font-size: 15.5px; max-width: 44ch; margin: 0 auto; line-height: 1.6; }
+
+        .app-card {
+            background: white; padding: 46px 44px; border-radius: 16px; position: relative; overflow: hidden;
+            box-shadow: 0 25px 50px -20px rgba(26,60,52,0.22);
+        }
+        .app-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+        }
+
+        .field { margin-bottom: 26px; }
+        .field:last-of-type { margin-bottom: 30px; }
+        label {
+            display: flex; align-items: center; gap: 9px; font-weight: 600; margin-bottom: 11px;
+            font-size: 12.5px; color: var(--green); text-transform: uppercase; letter-spacing: 0.06em;
+        }
+
+        input, select, textarea {
+            width: 100%; padding: 14px 16px; border: 1.5px solid #E4E1D8; border-radius: 9px;
+            box-sizing: border-box; font-size: 15px; font-family: 'Inter', sans-serif; color: var(--text);
+            background: #FDFCFA; transition: border-color .2s ease, box-shadow .2s ease;
+        }
+        textarea { resize: vertical; }
+        input:hover, select:hover, textarea:hover { border-color: #D8D2C2; }
+        input:focus, select:focus, textarea:focus {
+            outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(197,160,89,0.15);
+        }
+        select { cursor: pointer; }
+
+        .submit-btn {
+            width: 100%; padding: 19px; background: var(--green); color: white; border: none;
+            border-radius: 9px; font-weight: 700; text-transform: uppercase; cursor: pointer;
+            letter-spacing: 1.5px; font-size: 13.5px; transition: transform .18s ease, background .25s ease, box-shadow .25s ease;
+            box-shadow: 0 14px 28px -12px rgba(26,60,52,0.55);
+        }
+        .submit-btn:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 18px 32px -12px rgba(26,60,52,0.6); }
+        .submit-btn:active { transform: translateY(0); }
+
+        .note { text-align: center; font-size: 11.5px; color: #999; margin-top: 20px; letter-spacing: .02em; }
+        .privacy-note {
+            display: flex; align-items: center; justify-content: center; gap: 6px;
+            text-align: center; font-size: 11px; color: #b3b3b3; margin-top: 10px;
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 50px 16px; }
+            .app-card { padding: 34px 26px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <span class="eyebrow"><span class="dot"></span> By Application Only</span>
+        <h1>Coaching Application</h1>
+        <p>Chelsie Gray’s performance system is by application only. Complete the details below to determine if you are a fit for the program.</p>
+    </div>
+
+    <div class="app-card">
+        <form id="appForm">
+            <div class="field">
+                <label>1. What is your biggest struggle with fitness right now?</label>
+                <textarea name="struggle" rows="3" placeholder="Be specific, this helps me prepare your strategy..." required></textarea>
+            </div>
+            <div class="field">
+                <label>2. How soon are you looking to start?</label>
+                <select name="timeline" required>
+                    <option value="">Select timeline</option>
+                    <option value="immediate">Immediately (Ready to start today)</option>
+                    <option value="2weeks">Within 2 weeks</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>3. Your investment budget for health & coaching?</label>
+                <select name="budget" id="budget" required>
+                    <option value="">Select budget</option>
+                    <option value="under200">Under $200</option>
+                    <option value="low">$200 - $500</option>
+                    <option value="mid">$500 - $1,000</option>
+                    <option value="high">$1,000+</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>4. Ready to commit to coaching?</label>
+                <select name="ready" id="ready" required>
+                    <option value="yes">Yes, ready to start</option>
+                    <option value="no">Need to discuss first</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn">Submit Application →</button>
+            <p class="note">Only qualified applicants will be invited to a Strategy Call.</p>
+            <p class="privacy-note">🔒 Your information is 100% confidential</p>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('appForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const budget = document.getElementById('budget').value;
+
+        // Budget gate: under $200 isn't ready for the high-ticket program yet,
+        // so send them to the tripwire (low-ticket) offer instead of booking.
+        if (budget === 'under200') {
+            window.location.href = '02-tripwire.html';
+        } else {
+            window.location.href = '05-booking.html';
+        }
+    });
+</script>
+</body>
+</html>

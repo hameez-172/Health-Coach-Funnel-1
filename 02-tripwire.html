@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You're In! + A Quick Offer</title>
+<!-- WOMEN'S FITNESS FUNNEL — PAGE 2 of 5: THANK YOU / TRIPWIRE BRIDGE. DEMO ONLY, no real payment processed. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F8F7F4; --bg2:#F1ECE0; --dark:#0A192F; --pink:#C5A059; --pink2:#D9BC85;
+    --coral:#A8874A; --gold:#C5A059; --text:#0A192F; --muted:#6B6B6B; --card:#FFFFFF;
+    --grad: linear-gradient(135deg, var(--pink) 0%, var(--coral) 100%);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,h3{font-family:'Fraunces',serif; margin:0;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px; position:relative; z-index:2;}
+  @media (max-width:640px){.wrap{padding:0 20px;}}
+  .blob{position:absolute; border-radius:50%; filter:blur(70px); z-index:1; pointer-events:none;}
+
+  header{padding:26px 0;}
+  header .wrap{display:flex; align-items:center; justify-content:space-between;}
+  .brand{font-family:'Fraunces',serif; font-weight:700; font-size:20px;}
+  .brand span{color:var(--pink);}
+
+  .hero{padding:50px 0 20px; text-align:center; position:relative; overflow:hidden;}
+  .hero .blob.b1{width:340px; height:340px; background:var(--gold); opacity:.28; top:-100px; left:-80px;}
+  .hero .wrap{max-width:720px;}
+  .tag{
+    display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--pink); background:#fff; padding:9px 16px; border-radius:999px; margin-bottom:22px; box-shadow:0 8px 20px -8px rgba(235,77,130,0.3);
+  }
+  .tag .dot{width:7px; height:7px; border-radius:50%; background:#3CC28E;}
+  h1{font-size:clamp(30px,4.6vw,46px); margin:0 0 18px; line-height:1.1; font-weight:700;}
+  h1 .hl{background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .sub{font-size:16.5px; color:var(--muted); max-width:52ch; margin:0 auto 10px; font-family:'Inter',sans-serif;}
+  .inbox-note{display:inline-flex; align-items:center; gap:8px; font-size:13px; color:var(--muted); margin-top:6px; font-family:'IBM Plex Mono',monospace;}
+
+  .offer-section{padding:20px 0 90px; position:relative;}
+  .offer-lead{max-width:720px; margin:0 auto 26px; text-align:center;}
+  .offer-lead h2{font-size:clamp(22px,3vw,28px); margin-bottom:8px;}
+  .offer-lead p{color:var(--muted); font-size:15px;}
+  .offer-grid{max-width:920px; margin:0 auto; display:grid; grid-template-columns:1.1fr 0.9fr; gap:30px; align-items:start;}
+  @media (max-width:800px){.offer-grid{grid-template-columns:1fr;}}
+
+  .offer-card{background:var(--card); border-radius:22px; padding:34px; border:1px solid #00000008; box-shadow:0 24px 50px -24px rgba(34,19,31,0.18);}
+  .video-tile{
+    aspect-ratio:16/9; border-radius:14px; margin-bottom:22px; position:relative; overflow:hidden;
+    background:linear-gradient(135deg, rgba(44,23,41,0.55) 0%, rgba(74,36,56,0.55) 100%),
+      url('https://images.unsplash.com/photo-1609899464726-209befaac5bc?w=900&q=80&auto=format&fit=crop') center/cover;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .video-tile .play{width:58px; height:58px; border-radius:50%; background:var(--grad); display:flex; align-items:center; justify-content:center; color:#fff; font-size:20px; box-shadow:0 14px 30px -10px rgba(235,77,130,0.6);}
+  .offer-card h2{font-size:23px; margin:0 0 6px; font-weight:700;}
+  .offer-card p.desc{color:var(--muted); font-size:14.5px; margin:0 0 20px; font-family:'Inter',sans-serif;}
+  .offer-card ul{list-style:none; margin:0 0 20px; padding:0; display:flex; flex-direction:column; gap:12px;}
+  .offer-card ul li{display:flex; gap:10px; font-size:14.5px;}
+  .offer-card ul .chk{flex:none; width:22px; height:22px; border-radius:50%; background:var(--grad); color:#fff; font-size:11px; display:flex; align-items:center; justify-content:center;}
+  .value-stack{background:var(--bg2); border-radius:12px; padding:16px 18px; font-size:13.5px; color:var(--muted); margin-top:6px;}
+  .value-stack b{color:var(--text);}
+
+  .checkout-card{background:var(--dark); color:#fff; border-radius:22px; padding:32px; position:sticky; top:20px; box-shadow:0 30px 60px -24px rgba(34,19,31,0.5);}
+  .checkout-card .price-row{display:flex; align-items:baseline; gap:12px; margin-bottom:6px;}
+  .checkout-card .was{font-family:'IBM Plex Mono',monospace; font-size:15px; color:#ffffff60; text-decoration:line-through;}
+  .checkout-card .now{font-family:'Fraunces',serif; font-weight:700; font-size:42px; background:linear-gradient(135deg,#D9BC85,#C5A059); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .checkout-card p.note{font-size:12.5px; color:#ffffffaa; margin:0 0 24px; font-family:'Inter',sans-serif;}
+  .field{margin-bottom:12px;}
+  .field label{display:block; font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:#ffffff90; margin-bottom:6px;}
+  .field input{width:100%; padding:12px; border-radius:9px; border:1.5px solid #ffffff22; background:#ffffff0d; color:#fff; font-family:'Inter',sans-serif; font-size:14px; outline:none;}
+  .field input::placeholder{color:#ffffff55;}
+  .field input:focus{border-color:var(--pink2);}
+  .row-2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .submit-btn{
+    width:100%; padding:16px; border:none; border-radius:10px; background:var(--grad); color:#fff;
+    font-family:'IBM Plex Mono',monospace; font-size:13.5px; letter-spacing:.03em; text-transform:uppercase;
+    cursor:pointer; margin-top:8px; transition:transform .18s ease; box-shadow:0 14px 28px -10px rgba(235,77,130,0.55);
+  }
+  .submit-btn:hover{transform:translateY(-2px);}
+  .decline{display:block; text-align:center; margin-top:16px; font-size:12.5px; color:#ffffff70; text-decoration:underline; cursor:pointer;}
+  .demo-note{font-family:'IBM Plex Mono',monospace; font-size:10px; color:#ffffff45; text-align:center; margin-top:10px;}
+
+  footer{padding:34px 0; text-align:center;}
+  footer p{margin:0; font-size:12.5px; color:var(--muted);}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><div class="brand">Chelsie<span> Gray</span></div></div></header>
+
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="wrap">
+    <div class="tag"><span class="dot"></span> You're Confirmed</div>
+    <h1 id="greeting">You're In! Your <span class="hl">Blueprint</span> Is On Its Way</h1>
+    <p class="sub">Check your inbox in the next few minutes — your 7-Day Strength & Confidence Blueprint is headed your way.</p>
+    <span class="inbox-note">📩 While you wait, here's something to fast-track your results...</span>
+  </div>
+</section>
+
+<section class="offer-section">
+  <div class="wrap">
+    <div class="offer-lead">
+      <h2>Want The Follow-Along Videos Too?</h2>
+      <p>Stop guessing the form — watch exactly how every move in your blueprint is done, day by day.</p>
+    </div>
+    <div class="offer-grid">
+      <div class="offer-card">
+        <div class="video-tile"><div class="play">▶</div></div>
+        <h2>7-Day Follow-Along Strength Video Series</h2>
+        <p class="desc">One video per day, matched to your Starter Plan — no gym, no equipment needed.</p>
+        <ul>
+          <li><span class="chk">✓</span> 7 full follow-along strength videos (20 min each)</li>
+          <li><span class="chk">✓</span> Matches your 7-Day Blueprint day-by-day</li>
+          <li><span class="chk">✓</span> Beginner-friendly — modifications for every move</li>
+          <li><span class="chk">✓</span> Instant access, watch on any device</li>
+        </ul>
+        <div class="value-stack"><b>Normally $27</b> — today only $7 as a thank-you for grabbing the free Blueprint. This offer disappears once you leave this page.</div>
+      </div>
+      <div class="checkout-card">
+        <div class="price-row"><span class="was">$27</span><span class="now">$7</span></div>
+        <p class="note">One-time payment. Instant access.</p>
+        <form id="tripwireForm">
+          <div class="field"><label>Name On Card</label><input type="text" placeholder="Full name" required></div>
+          <div class="field"><label>Card Number</label><input type="text" placeholder="•••• •••• •••• ••••" required></div>
+          <div class="row-2">
+            <div class="field"><label>Expiry</label><input type="text" placeholder="MM / YY" required></div>
+            <div class="field"><label>CVC</label><input type="text" placeholder="123" required></div>
+          </div>
+          <button type="submit" class="submit-btn">Yes! Add This To My Order — $7</button>
+        </form>
+        <span class="decline" id="declineLink">No thanks, I'll just stick to the free blueprint</span>
+        <p class="demo-note">DEMO ONLY — no real payment is processed here</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><p>© <span id="year"></span> Chelsie Gray. This is a portfolio/pitch demo funnel.</p></div></footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const name = sessionStorage.getItem('leadName');
+  if(name){ document.getElementById('greeting').innerHTML = 'You\'re In, ' + name + '! Your <span class="hl">Blueprint</span> Is On Its Way'; }
+  document.getElementById('tripwireForm').addEventListener('submit', function(e){
+    e.preventDefault(); sessionStorage.setItem('isBuyer', 'true'); window.location.href = '03-application.html';
+  });
+  document.getElementById('declineLink').addEventListener('click', function(){
+    sessionStorage.setItem('isBuyer', 'false'); window.location.href = '03-application.html';
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Book Your Free Strategy Session</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F8F7F4;
+    --card: #FFFFFF;
+    --dark: #0A192F;
+    --primary: #0A192F;
+    --accent: #C5A059;
+    --text: #2D2D2D;
+    --muted: #6B6B6B;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,h3{font-family:'Fraunces',serif; margin:0; color:var(--dark);}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px; position:relative; z-index:2;}
+  @media (max-width:640px){.wrap{padding:0 20px;}}
+  .blob{position:absolute; border-radius:50%; filter:blur(70px); z-index:1; pointer-events:none;}
+
+  header{padding:26px 0;}
+  header .wrap{display:flex; align-items:center; justify-content:space-between;}
+  .brand{font-family:'Fraunces',serif; font-weight:700; font-size:20px; color:var(--dark);}
+  .brand span{color:var(--accent);}
+
+  .hero{padding:50px 0 20px; text-align:center; position:relative; overflow:hidden;}
+  .hero .blob.b1{width:340px; height:340px; background:var(--accent); opacity:.18; top:-100px; right:-80px;}
+  .hero .wrap{max-width:680px;}
+  .tag{
+    display:inline-flex; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--accent); background:#fff; padding:9px 16px; border-radius:999px; margin-bottom:22px; box-shadow:0 8px 20px -8px rgba(10,25,47,0.15);
+  }
+  h1{font-size:clamp(28px,4.4vw,42px); margin:0 0 16px; line-height:1.1; font-weight:700;}
+  h1 .hl{color:var(--accent);}
+  .sub{font-size:16px; color:var(--muted); max-width:52ch; margin:0 auto; font-family:'Inter',sans-serif;}
+
+  .content{padding:30px 0 90px; position:relative;}
+  .layout{max-width:960px; margin:0 auto; display:grid; grid-template-columns:0.85fr 1.15fr; gap:34px; align-items:start;}
+  @media (max-width:800px){.layout{grid-template-columns:1fr;}}
+  .expect-photo{
+    aspect-ratio:16/10; border-radius:18px; margin-bottom:18px; overflow:hidden;
+    background:url('https://images.unsplash.com/photo-1532382919052-c1cf04f61bb0?w=800&q=80&auto=format&fit=crop') center/cover;
+    box-shadow:0 10px 20px -5px rgba(10,25,47,0.15);
+  }
+  .expect-card{background:var(--card); border:1px solid #E5E1D6; border-top:4px solid var(--accent); border-radius:18px; padding:30px; box-shadow:0 10px 20px -5px rgba(10,25,47,0.06);}
+  .expect-card h3{font-size:16.5px; margin:0 0 16px; font-weight:700;}
+  .expect-card ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px;}
+  .expect-card li{display:flex; gap:10px; font-size:14px; color:var(--muted); font-family:'Inter',sans-serif;}
+  .expect-card .chk{flex:none; width:22px; height:22px; border-radius:50%; background:var(--dark); color:var(--accent); font-size:11px; display:flex; align-items:center; justify-content:center;}
+
+  /* Calendly Embed Styling */
+  .calendar-box{
+    background: var(--dark); border-radius:20px; min-height:600px;
+    box-shadow:0 20px 40px -12px rgba(10,25,47,0.35); padding: 10px; border: 1px solid var(--dark);
+    position:relative; overflow:hidden;
+  }
+  .calendly-inline-widget { min-width: 320px; height: 600px; position:relative; z-index:2; }
+
+  /* Designed placeholder shown behind/under the widget until a real Calendly link is connected */
+  .calendar-placeholder{
+    position:absolute; inset:10px; border-radius:14px; z-index:1;
+    background: linear-gradient(180deg, #0F2038 0%, #0A192F 100%);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:30px;
+  }
+  .calendar-placeholder .mini-cal{
+    width:180px; margin-bottom:22px; background:#fff; border-radius:10px; overflow:hidden;
+    box-shadow:0 14px 30px -10px rgba(0,0,0,0.4);
+  }
+  .calendar-placeholder .mini-cal .cal-head{
+    background:var(--accent); color:var(--dark); font-family:'IBM Plex Mono',monospace; font-size:11px;
+    text-transform:uppercase; letter-spacing:.05em; padding:8px 0; font-weight:700;
+  }
+  .calendar-placeholder .mini-cal .cal-grid{
+    display:grid; grid-template-columns:repeat(7,1fr); gap:4px; padding:10px;
+  }
+  .calendar-placeholder .mini-cal .cal-grid span{
+    font-size:10px; color:#0A192F; opacity:.35; padding:4px 0;
+  }
+  .calendar-placeholder .mini-cal .cal-grid span.active{
+    opacity:1; background:var(--dark); color:#fff; border-radius:50%; font-weight:700;
+  }
+  .calendar-placeholder h4{color:#fff; font-size:16px; margin:0 0 8px; font-weight:600; font-family:'Inter',sans-serif;}
+  .calendar-placeholder p{color:#ffffff80; font-size:12.5px; max-width:280px; margin:0; font-family:'IBM Plex Mono',monospace; line-height:1.6;}
+
+  .faq-item{border-top:1px solid #E5E1D6; padding:20px 0; max-width:680px; margin:0 auto;}
+  .faq-item:last-child{border-bottom:1px solid #E5E1D6;}
+  .faq-item h4{font-size:15px; margin:0 0 8px; font-weight:600; font-family:'Inter',sans-serif; color:var(--dark);}
+  .faq-item p{margin:0; font-size:13.5px; color:var(--muted); font-family:'Inter',sans-serif;}
+  .faq-wrap{padding:70px 0 0;}
+  .section-head{text-align:center; margin-bottom:24px;}
+  .section-head h2{font-size:23px; font-weight:700;}
+
+  footer{padding:34px 0; text-align:center;}
+  footer p{margin:0; font-size:12.5px; color:var(--muted);}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><div class="brand">Chelsie<span>Gray</span></div></div></header>
+
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="wrap">
+    <div class="tag">Final Step</div>
+    <h1>Book Your Free <span class="hl">Strategy Session</span></h1>
+    <p class="sub">Pick a time that works for you. This is a real conversation about your goals — not a script.</p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="wrap layout">
+    <div class="expect-card">
+      <div class="expect-photo"></div>
+      <h3>What To Expect On The Call</h3>
+      <ul>
+        <li><span class="chk">✓</span> We'll go over your goals and current struggles</li>
+        <li><span class="chk">✓</span> I'll map out what a realistic plan looks like for you</li>
+        <li><span class="chk">✓</span> If it's a fit, I'll walk you through the coaching program</li>
+        <li><span class="chk">✓</span> No pressure — if it's not the right fit, that's okay too</li>
+      </ul>
+    </div>
+    
+    <div class="calendar-box">
+      <!-- Designed placeholder — visible until a real Calendly link is connected below -->
+      <div class="calendar-placeholder">
+        <div class="mini-cal">
+          <div class="cal-head">Select a Time</div>
+          <div class="cal-grid">
+            <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+            <span></span><span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            <span>6</span><span>7</span><span class="active">8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+            <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
+          </div>
+        </div>
+        <h4>Calendar Connects Here</h4>
+        <p>Add your Calendly link in the code (data-url) to activate real-time booking.</p>
+      </div>
+
+      <!--
+        Calendly inline widget — currently disabled because no real link is connected yet.
+        Replace YOUR_CALENDLY_LINK_HERE below with your actual Calendly URL, then uncomment
+        this block AND delete the .calendar-placeholder div above — the real widget will
+        take over automatically.
+
+        <div class="calendly-inline-widget" data-url="YOUR_CALENDLY_LINK_HERE"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      -->
+    </div>
+  </div>
+
+  <div class="faq-wrap">
+    <div class="wrap">
+      <div class="section-head"><h2>Quick Questions</h2></div>
+      <div class="faq-item"><h4>Is this actually free?</h4><p>Yes — no charge for the call itself. If we decide to work together afterward, I'll walk you through pricing then.</p></div>
+      <div class="faq-item"><h4>How long is the call?</h4><p>About 20–30 minutes, over phone or Zoom.</p></div>
+      <div class="faq-item"><h4>Will I be pressured to buy?</h4><p>No. If it's not a fit, I'll tell you directly — I'd rather that than take on a client who isn't ready.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><p>© <span id="year"></span> Chelsie Gray</p></div></footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
