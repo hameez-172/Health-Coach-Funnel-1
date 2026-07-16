@@ -19,6 +19,7 @@
 
         body {
             margin: 0;
+            width: 100%;
             background-color: var(--cream);
             color: var(--text);
             font-family: 'Inter', sans-serif;
@@ -26,12 +27,13 @@
         }
 
         .layout {
-            max-width: 1100px;
+            width: 100%;
+            max-width: 1920px;
             margin: 0 auto;
-            padding: 60px 24px 40px;
+            padding: clamp(40px, 5vw, 90px) clamp(24px, 6vw, 120px) clamp(30px, 4vw, 60px);
             display: grid;
             grid-template-columns: 1.1fr 1fr;
-            gap: 60px;
+            gap: clamp(30px, 4vw, 80px);
             align-items: center;
         }
 
@@ -190,9 +192,14 @@
 
         /* Extra sections to lengthen the page */
         .section {
-            max-width: 1100px;
+            width: 100%;
+            padding: clamp(40px, 6vw, 90px) clamp(24px, 6vw, 120px);
+        }
+
+        .section-inner {
+            width: 100%;
+            max-width: 1920px;
             margin: 0 auto;
-            padding: 50px 24px;
         }
 
         .section-title {
@@ -369,60 +376,66 @@
 </div>
 
 <section class="section whats-inside">
-    <h2 class="section-title">What's Inside The Blueprint</h2>
-    <p class="section-subtitle">Three focused pillars, built to fit a real schedule, so you get real results without wrecking your energy.</p>
-    <div class="cards-grid">
-        <div class="card">
-            <div class="num">01</div>
-            <h4>Precision Patterns</h4>
-            <p>The exact movement sequences that build strength efficiently, without wasted reps or guesswork.</p>
-        </div>
-        <div class="card">
-            <div class="num">02</div>
-            <h4>Mindset Architecture</h4>
-            <p>The mental framework high-performers use to stay consistent even on the busiest weeks.</p>
-        </div>
-        <div class="card">
-            <div class="num">03</div>
-            <h4>Strategic Nutrition</h4>
-            <p>Simple, sustainable fueling principles that support energy and recovery, not restriction.</p>
+    <div class="section-inner">
+        <h2 class="section-title">What's Inside The Blueprint</h2>
+        <p class="section-subtitle">Three focused pillars, built to fit a real schedule, so you get real results without wrecking your energy.</p>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="num">01</div>
+                <h4>Precision Patterns</h4>
+                <p>The exact movement sequences that build strength efficiently, without wasted reps or guesswork.</p>
+            </div>
+            <div class="card">
+                <div class="num">02</div>
+                <h4>Mindset Architecture</h4>
+                <p>The mental framework high-performers use to stay consistent even on the busiest weeks.</p>
+            </div>
+            <div class="card">
+                <div class="num">03</div>
+                <h4>Strategic Nutrition</h4>
+                <p>Simple, sustainable fueling principles that support energy and recovery, not restriction.</p>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="section testimonials">
-    <h2 class="section-title">Women Who Made The Shift</h2>
-    <p class="section-subtitle">A small sample of the 12,000+ women who have started this exact blueprint.</p>
-    <div class="testi-grid">
-        <div class="testi-card">
-            <div class="stars">★★★★★</div>
-            <p>The structure finally made sense. I stopped bouncing between random workouts and saw progress in the first week.</p>
-            <div class="name">Amina R.</div>
-        </div>
-        <div class="testi-card">
-            <div class="stars">★★★★★</div>
-            <p>This felt built for my actual life, not an influencer's schedule. The mindset piece changed how I show up daily.</p>
-            <div class="name">Sara K.</div>
-        </div>
-        <div class="testi-card">
-            <div class="stars">★★★★★</div>
-            <p>Clear, calm, no fluff. I finally feel like I understand what I'm doing and why.</p>
-            <div class="name">Layla M.</div>
+    <div class="section-inner">
+        <h2 class="section-title">Women Who Made The Shift</h2>
+        <p class="section-subtitle">A small sample of the 12,000+ women who have started this exact blueprint.</p>
+        <div class="testi-grid">
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <p>The structure finally made sense. I stopped bouncing between random workouts and saw progress in the first week.</p>
+                <div class="name">Amina R.</div>
+            </div>
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <p>This felt built for my actual life, not an influencer's schedule. The mindset piece changed how I show up daily.</p>
+                <div class="name">Sara K.</div>
+            </div>
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <p>Clear, calm, no fluff. I finally feel like I understand what I'm doing and why.</p>
+                <div class="name">Layla M.</div>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="section final-cta">
-    <h2 class="section-title">Ready To Start?</h2>
-    <p class="section-subtitle">Get instant access to the 7-Day Strength & Confidence Blueprint, completely free.</p>
-    <div class="optin-card">
-        <h3>Grab the exact blueprint free</h3>
-        <form action="2-application.html" method="GET">
-            <input type="text" placeholder="First Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <button type="submit">Send Me The Guide</button>
-        </form>
-        <p class="footer-note">Your privacy is 100% protected. Join 12K+ women.</p>
+    <div class="section-inner">
+        <h2 class="section-title">Ready To Start?</h2>
+        <p class="section-subtitle">Get instant access to the 7-Day Strength & Confidence Blueprint, completely free.</p>
+        <div class="optin-card">
+            <h3>Grab the exact blueprint free</h3>
+            <form action="2-application.html" method="GET">
+                <input type="text" placeholder="First Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <button type="submit">Send Me The Guide</button>
+            </form>
+            <p class="footer-note">Your privacy is 100% protected. Join 12K+ women.</p>
+        </div>
     </div>
 </section>
 
